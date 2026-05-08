@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - StudyControl UC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button class="btn-tema" onclick="cambiarTema()">
+    🌙
+</button>
+
+<nav class="menu">
+    <h2>StudyControl UC</h2>
+
+    <a href="dashboard.html">Inicio</a>
+    <a href="redes.html">Control de Redes</a>
+    <a href="tiempo.html">Gestión del Tiempo</a>
+    <a href="monitoreo.html">Monitoreo Académico</a>
+    <a href="reportes.html" class="activo">Reportes</a>
+    <a href="login.html">Salir</a>
+</nav>
+
+<main class="contenido">
+
+    <section class="dashboard-hero">
+        <div>
+            <h1>Reportes y Análisis Académico</h1>
+            <p>
+                Visualiza el análisis general del uso de redes sociales, gestión del tiempo
+                y rendimiento académico mediante reportes y gráficos.
+            </p>
+        </div>
+
+        <div class="hero-badge">
+            <span>📊</span>
+            <p>Análisis inteligente</p>
+        </div>
+    </section>
+
+    <section class="contenedor-reportes">
+
+        <div class="reporte-card">
+            <h2>Total horas en redes</h2>
+            <p id="totalRedes">0 h</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Tareas completadas</h2>
+            <p id="tareasCompletadas">0</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Tareas pendientes</h2>
+            <p id="tareasPendientes">0</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Promedio académico</h2>
+            <p id="promedioAcademico">0</p>
+        </div>
+
+    </section>
+
+    <section class="graficos-grid">
+
+        <div class="grafico-card">
+            <h2>Uso de redes sociales</h2>
+            <canvas id="graficoRedes"></canvas>
+        </div>
+
+        <div class="grafico-card">
+            <h2>Gestión del tiempo</h2>
+            <canvas id="graficoTareas"></canvas>
+        </div>
+
+        <div class="grafico-card grande">
+            <h2>Rendimiento académico</h2>
+            <canvas id="graficoNotas"></canvas>
+        </div>
+
+    </section>
+
+    <section class="analisis-box">
+        <h2>Análisis general del estudiante</h2>
+        <p id="analisisGeneral">
+            Cargando análisis...
+        </p>
+    </section>
+
+    <section class="recomendaciones-box">
+        <h2>Recomendaciones</h2>
+        <ul id="listaRecomendaciones"></ul>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/reportes.js"></script>
+<script src="js/tema.js"></script>
+
+</body>
+</html>

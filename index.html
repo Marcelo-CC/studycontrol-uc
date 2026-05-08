@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyControl UC</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .inicio-hero {
+            min-height: 560px;
+            background: linear-gradient(135deg, #0d6efd, #003b8e);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 8%;
+        }
+
+        .inicio-contenido {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 55px;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .inicio-texto h1 {
+            font-size: 54px;
+            margin-bottom: 18px;
+            color: white;
+        }
+
+        .inicio-texto p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .botones-inicio {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-principal,
+        .btn-secundario {
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-principal {
+            background: white;
+            color: #0d6efd;
+        }
+
+        .btn-secundario {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .inicio-panel {
+            background: rgba(255,255,255,0.18);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .inicio-panel h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .mini-dato {
+            background: white;
+            color: #222;
+            padding: 18px;
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+
+        .mini-dato strong {
+            color: #0d6efd;
+            font-size: 22px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mini-dato p {
+            color: #333;
+        }
+
+        .seccion {
+            padding: 70px 8%;
+            background: #f4f6f9;
+        }
+
+        .seccion h2 {
+            text-align: center;
+            color: #0d6efd;
+            font-size: 36px;
+            margin-bottom: 35px;
+        }
+
+        .modulos-inicio {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .modulo-inicio {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .modulo-inicio:hover {
+            transform: translateY(-8px);
+        }
+
+        .modulo-inicio .icono {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .modulo-inicio h3 {
+            color: #0d6efd;
+            margin-bottom: 12px;
+        }
+
+        .modulo-inicio p {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .como-funciona {
+            background: white;
+        }
+
+        .pasos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .paso {
+            background: #f4f6f9;
+            padding: 28px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+        }
+
+        .paso span {
+            display: inline-block;
+            background: #0d6efd;
+            color: white;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .paso h3 {
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+
+        .paso p {
+            color: #333;
+        }
+
+        .footer-inicio {
+            background: #003b8e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MODO OSCURO SOLO PARA INDEX */
+
+        .modo-oscuro .inicio-hero {
+            background: linear-gradient(135deg, #1d4ed8, #020617);
+        }
+
+        .modo-oscuro .inicio-texto h1,
+        .modo-oscuro .inicio-texto p,
+        .modo-oscuro .inicio-panel h2 {
+            color: white;
+        }
+
+        .modo-oscuro .inicio-panel {
+            background: rgba(30, 41, 59, 0.95);
+        }
+
+        .modo-oscuro .mini-dato {
+            background: #0f172a;
+            color: white;
+        }
+
+        .modo-oscuro .mini-dato strong {
+            color: #60a5fa;
+        }
+
+        .modo-oscuro .mini-dato p {
+            color: #e5e7eb;
+        }
+
+        .modo-oscuro .seccion {
+            background: #0f172a;
+        }
+
+        .modo-oscuro .como-funciona {
+            background: #111827;
+        }
+
+        .modo-oscuro .seccion h2 {
+            color: #60a5fa;
+        }
+
+        .modo-oscuro .modulo-inicio,
+        .modo-oscuro .paso {
+            background: #1e293b;
+            color: white;
+        }
+
+        .modo-oscuro .modulo-inicio h3,
+        .modo-oscuro .paso h3 {
+            color: #60a5fa;
+        }
+
+        .modo-oscuro .modulo-inicio p,
+        .modo-oscuro .paso p {
+            color: #e5e7eb;
+        }
+
+        .modo-oscuro .footer-inicio {
+            background: #020617;
+        }
+
+        @media (max-width: 900px) {
+            .inicio-contenido,
+            .modulos-inicio,
+            .pasos {
+                grid-template-columns: 1fr;
+            }
+
+            .inicio-texto h1 {
+                font-size: 38px;
+            }
+
+            .botones-inicio {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button class="btn-tema" onclick="cambiarTema()">
+    🌙
+</button>
+
+<section class="inicio-hero">
+    <div class="inicio-contenido">
+
+        <div class="inicio-texto">
+            <h1>StudyControl UC</h1>
+
+            <p>
+                Sistema web para regular el uso de redes sociales, organizar
+                actividades académicas y mejorar el rendimiento académico de los
+                estudiantes universitarios.
+            </p>
+
+            <div class="botones-inicio">
+                <a href="login.html" class="btn-principal">Ingresar al sistema</a>
+                <a href="#modulos" class="btn-secundario">Ver módulos</a>
+            </div>
+        </div>
+
+        <div class="inicio-panel">
+            <h2>Panel inteligente</h2>
+
+            <div class="mini-dato">
+                <strong>📱 Control digital</strong>
+                <p>Registra el tiempo de uso de redes sociales.</p>
+            </div>
+
+            <div class="mini-dato">
+                <strong>⏰ Gestión del tiempo</strong>
+                <p>Organiza tareas, fechas y horarios académicos.</p>
+            </div>
+
+            <div class="mini-dato">
+                <strong>📊 Reportes</strong>
+                <p>Obtén análisis automáticos y recomendaciones.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="seccion" id="modulos">
+    <h2>Módulos del sistema</h2>
+
+    <div class="modulos-inicio">
+
+        <div class="modulo-inicio">
+            <div class="icono">📱</div>
+            <h3>Control de Redes</h3>
+            <p>Registra y analiza el tiempo dedicado a redes sociales.</p>
+        </div>
+
+        <div class="modulo-inicio">
+            <div class="icono">⏰</div>
+            <h3>Gestión del Tiempo</h3>
+            <p>Organiza actividades académicas por fecha y hora.</p>
+        </div>
+
+        <div class="modulo-inicio">
+            <div class="icono">📚</div>
+            <h3>Monitoreo Académico</h3>
+            <p>Registra notas, cursos y calcula el rendimiento académico.</p>
+        </div>
+
+        <div class="modulo-inicio">
+            <div class="icono">🚨</div>
+            <h3>Alertas Inteligentes</h3>
+            <p>Detecta riesgos académicos y distracciones digitales.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="seccion como-funciona">
+    <h2>¿Cómo funciona?</h2>
+
+    <div class="pasos">
+
+        <div class="paso">
+            <span>1</span>
+            <h3>Registra tus datos</h3>
+            <p>Ingresa redes sociales, tareas y notas académicas.</p>
+        </div>
+
+        <div class="paso">
+            <span>2</span>
+            <h3>El sistema analiza</h3>
+            <p>Procesa tu información y detecta riesgos o mejoras.</p>
+        </div>
+
+        <div class="paso">
+            <span>3</span>
+            <h3>Recibe alertas</h3>
+            <p>Obtén advertencias sobre redes, tareas y rendimiento.</p>
+        </div>
+
+        <div class="paso">
+            <span>4</span>
+            <h3>Mejora tu rendimiento</h3>
+            <p>Aplica recomendaciones para mejorar tus hábitos.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer-inicio">
+    <p>Universidad Continental - 2026 | StudyControl UC</p>
+</footer>
+
+<script src="js/tema.js"></script>
+
+</body>
+</html>

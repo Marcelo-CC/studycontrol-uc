@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Redes - StudyControl UC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button class="btn-tema" onclick="cambiarTema()">
+    🌙
+</button>
+
+<nav class="menu">
+    <h2>StudyControl UC</h2>
+
+    <a href="dashboard.html">Inicio</a>
+    <a href="redes.html" class="activo">Control de Redes</a>
+    <a href="tiempo.html">Gestión del Tiempo</a>
+    <a href="monitoreo.html">Monitoreo Académico</a>
+    <a href="reportes.html">Reportes</a>
+    <a href="login.html">Salir</a>
+</nav>
+
+<main class="contenido">
+
+    <section class="dashboard-hero">
+        <div>
+            <h1>Control de Redes Sociales</h1>
+            <p>
+                Registra el tiempo que dedicas a redes sociales y recibe alertas automáticas
+                para reducir distracciones digitales.
+            </p>
+        </div>
+
+        <div class="hero-badge">
+            <span>📱</span>
+            <p>Control digital</p>
+        </div>
+    </section>
+
+    <section class="contenedor-reportes">
+
+        <div class="reporte-card">
+            <h2>Total registrado</h2>
+            <p id="totalHorasRedes">0 h</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Registros</h2>
+            <p id="totalRegistros">0</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Estado</h2>
+            <p id="estadoGeneral">Sin datos</p>
+        </div>
+
+    </section>
+
+    <section class="modulo-grid">
+
+        <div class="formulario moderno">
+            <h2>Nuevo registro</h2>
+
+            <input type="text" id="redSocial" placeholder="Ejemplo: TikTok, Instagram, Facebook">
+
+            <input type="number" id="horasUso" placeholder="Horas de uso" min="0" step="0.5">
+
+            <button onclick="registrarRed()">Guardar registro</button>
+        </div>
+
+        <div class="analisis-box">
+            <h2>Análisis rápido</h2>
+            <p id="analisisRedes">
+                Registra el uso de tus redes sociales para obtener un análisis automático.
+            </p>
+        </div>
+
+    </section>
+
+    <h2 class="titulo-seccion">Historial de uso</h2>
+
+    <div class="tabla-registros">
+        <div class="tabla-header">
+            <span>Red social</span>
+            <span>Horas</span>
+            <span>Fecha</span>
+            <span>Estado</span>
+        </div>
+
+        <div id="listaRedes"></div>
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/redes.js"></script>
+<script src="js/tema.js"></script>
+
+</body>
+</html>

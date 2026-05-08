@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Principal - StudyControl UC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="menu">
+    <h2>StudyControl UC</h2>
+
+    <a href="dashboard.html" class="activo">Inicio</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="redes.html">Control de Redes</a>
+    <a href="tiempo.html">Gestión del Tiempo</a>
+    <a href="monitoreo.html">Monitoreo Académico</a>
+    <a href="reportes.html">Reportes</a>
+    <a href="login.html">Salir</a>
+</nav>
+
+<main class="contenido">
+
+    <button class="btn-tema" onclick="cambiarTema()">
+    🌙
+    </button>
+
+    <section class="dashboard-hero">
+        <div>
+            <h1 id="saludoUsuario">Bienvenido</h1>
+            <p id="descripcionUsuario">Cargando información académica...</p>
+        </div>
+
+        <div class="hero-badge">
+            <span>🎓</span>
+            <p id="badgeCarrera">StudyControl UC</p>
+        </div>
+    </section>
+
+    <section class="perfil-dashboard">
+        <div class="perfil-mini-card">
+            <h3>Nombre</h3>
+            <p id="perfilNombre">No registrado</p>
+        </div>
+
+        <div class="perfil-mini-card">
+            <h3>Carrera</h3>
+            <p id="perfilCarrera">No registrada</p>
+        </div>
+
+        <div class="perfil-mini-card">
+            <h3>Ciclo</h3>
+            <p id="perfilCiclo">No registrado</p>
+        </div>
+
+        <div class="perfil-mini-card">
+            <h3>Universidad</h3>
+            <p id="perfilUniversidad">No registrada</p>
+        </div>
+    </section>
+
+    <section class="contenedor-reportes">
+        <div class="reporte-card">
+            <h2>Horas en redes</h2>
+            <p id="dashHorasRedes">0 h</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Tareas pendientes</h2>
+            <p id="dashTareasPendientes">0</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Promedio académico</h2>
+            <p id="dashPromedio">0</p>
+        </div>
+
+        <div class="reporte-card">
+            <h2>Alertas</h2>
+            <p id="dashTotalAlertas">0</p>
+        </div>
+    </section>
+
+    <section class="alertas-dashboard">
+        <h2>Alertas inteligentes</h2>
+        <div id="listaAlertasDashboard"></div>
+    </section>
+
+    <section class="dashboard-grid">
+        <a href="redes.html" class="dashboard-card">
+            <div class="icono-card">📱</div>
+            <h2>Control de Redes</h2>
+            <p>Registra el tiempo que dedicas a TikTok, Instagram, Facebook u otras redes sociales.</p>
+            <span>Ir al módulo →</span>
+        </a>
+
+        <a href="tiempo.html" class="dashboard-card">
+            <div class="icono-card">⏰</div>
+            <h2>Gestión del Tiempo</h2>
+            <p>Organiza tus tareas, horarios de estudio y actividades académicas pendientes.</p>
+            <span>Ir al módulo →</span>
+        </a>
+
+        <a href="monitoreo.html" class="dashboard-card">
+            <div class="icono-card">📚</div>
+            <h2>Monitoreo Académico</h2>
+            <p>Registra tus cursos, notas y revisa tu estado académico rápidamente.</p>
+            <span>Ir al módulo →</span>
+        </a>
+
+        <a href="reportes.html" class="dashboard-card especial">
+            <div class="icono-card">📊</div>
+            <h2>Reportes Inteligentes</h2>
+            <p>Visualiza análisis automáticos, gráficos y estadísticas académicas.</p>
+            <span>Ver reportes →</span>
+        </a>
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/tema.js"></script>
+
+</body>
+</html>

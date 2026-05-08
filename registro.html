@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - StudyControl UC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+
+    <div class="login-box">
+        <h2>Registro de Usuario</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre completo">
+        <input type="email" id="correo" placeholder="Correo electrónico">
+        <input type="password" id="password" placeholder="Contraseña">
+
+        <button onclick="registrarUsuario()">Registrarse</button>
+
+        <p>¿Ya tienes cuenta?</p>
+        <a href="login.html">Iniciar sesión</a>
+    </div>
+
+    <!-- LIBRERÍA DE SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+    <!-- CONEXIÓN A SUPABASE -->
+    <script src="js/supabase.js"></script>
+
+    <!-- FUNCIONES DE LOGIN Y REGISTRO -->
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Estudiante - StudyControl UC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button class="btn-tema" onclick="cambiarTema()">
+    🌙
+</button>
+
+<nav class="menu">
+    <h2>StudyControl UC</h2>
+
+    <a href="dashboard.html">Inicio</a>
+    <a href="perfil.html" class="activo">Perfil</a>
+    <a href="redes.html">Control de Redes</a>
+    <a href="tiempo.html">Gestión del Tiempo</a>
+    <a href="monitoreo.html">Monitoreo Académico</a>
+    <a href="reportes.html">Reportes</a>
+    <a href="login.html">Salir</a>
+</nav>
+
+<main class="contenido">
+
+    <section class="dashboard-hero">
+        <div>
+            <h1>Perfil del Estudiante</h1>
+            <p>
+                Completa tu información académica para personalizar el sistema
+                y mejorar el análisis de rendimiento.
+            </p>
+        </div>
+
+        <div class="hero-badge">
+            <span>👨‍🎓</span>
+            <p>Perfil académico</p>
+        </div>
+    </section>
+
+    <section class="modulo-grid">
+
+        <div class="formulario moderno">
+
+            <h2>Información personal</h2>
+
+            <input 
+                type="text" 
+                id="nombre" 
+                placeholder="Nombre completo"
+            >
+
+            <input 
+                type="text" 
+                id="carrera" 
+                placeholder="Carrera profesional"
+            >
+
+            <input 
+                type="text" 
+                id="ciclo" 
+                placeholder="Ciclo académico"
+            >
+
+            <input 
+                type="text" 
+                id="universidad" 
+                placeholder="Universidad"
+            >
+
+            <button onclick="guardarPerfil()">
+                Guardar perfil
+            </button>
+
+        </div>
+
+        <div class="analisis-box">
+
+            <h2>Información del sistema</h2>
+
+            <p>
+                Este perfil permitirá personalizar el seguimiento académico,
+                generar recomendaciones y mejorar el análisis de rendimiento estudiantil.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="perfil-resumen">
+
+        <h2>Resumen del estudiante</h2>
+
+        <div class="perfil-card">
+
+            <p><strong>Nombre:</strong> <span id="datoNombre">No registrado</span></p>
+
+            <p><strong>Carrera:</strong> <span id="datoCarrera">No registrado</span></p>
+
+            <p><strong>Ciclo:</strong> <span id="datoCiclo">No registrado</span></p>
+
+            <p><strong>Universidad:</strong> <span id="datoUniversidad">No registrado</span></p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/perfil.js"></script>
+<script src="js/tema.js"></script>
+
+</body>
+</html>
